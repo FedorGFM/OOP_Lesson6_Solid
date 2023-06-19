@@ -1,20 +1,15 @@
 package solid.lsp;
 
-public class Order {
+public class Order extends OrderAbstract{
     private int price;
     private int qnt;
 
-    public Order(int qnt, int price) {
-        this.price = price;
-        this.qnt = qnt;
+    public Order(int price, int qnt) {
+        super(price, qnt);
     }
 
     public int getAmount() {
-        return qnt * price;
+        return super.qnt * super.price;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Количество = %d, Цена = %d", qnt, price);
-    }
 }
